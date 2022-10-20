@@ -1,7 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { notificationListener, requestUserPermission } from './src/utils/pushnotification_helper'
 
 const App = () => {
+
+  useEffect(()=>{
+    requestUserPermission()
+    notificationListener()
+  },[])
   return (
     <View>
       <Text>App</Text>
